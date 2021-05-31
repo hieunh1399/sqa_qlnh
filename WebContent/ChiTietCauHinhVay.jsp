@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,12 +29,16 @@
 				<fieldset>
 					<label>Hình thức vay:</label> <input type="text"
 						class="form-control" style="width: 500px; height: 30px"
-						value="<c:out value='${chv.hinhThucVay }'/>" name="hinhThucVay" />
+						value="<c:out value='${chv.hinhThucVay }'/>" name="hinhThucVay" disabled="disabled"/>
 				</fieldset>
 				<fieldset>
 					<label>Số tiền vay tối đa: </label> <input type="text"
 						class="form-control" style="width: 500px; height: 30px"
 						value="<c:out value='${chv.soTienToiDa }'/>" name="soTienToiDa" />
+						<a type="text" class="form-control" style="width:500px; height:30px">
+						<fmt:formatNumber type = "number"
+         				maxFractionDigits = "3" value = '${chv.soTienToiDa }'/> 
+         				</a>
 				</fieldset>
 				<fieldset>
 					<label>Thời hạn vay tối đa:</label> <input type="text"
@@ -49,17 +54,17 @@
 					<label>Số tiền phải trả lãi vay:</label> <input type="text"
 						class="form-control" style="width: 500px; height: 30px"
 						value="<c:out value='${chv.soTienPhaiTra }'/>"
-						name="soTienPhaiTra" />
+						name="soTienPhaiTra" disabled="disabled"/>
 				</fieldset>
 				<fieldset>
 					<label>Tổng số tiền phải trả: </label> <input type="text"
 						class="form-control" style="width: 500px; height: 30px"
-						value="<c:out value='${chv.tong }'/>" name="tong" />
+						value="<c:out value='${chv.tong }'/>" name="tong" disabled="disabled" />
 				</fieldset>
 				<fieldset>
 					<label>Đơn vị tiền tệ</label> <input type="text"
 						class="form-control" style="width: 500px; height: 30px"
-						value="<c:out value='${chv.donVi }'/>" name="donVi" />
+						value="<c:out value='${chv.donVi }'/>" name="donVi" disabled="disabled" />
 				</fieldset>
 				<div class="input-group-append">
 					<button class="btn btn-outline-secondary" type="submit">Chỉnh

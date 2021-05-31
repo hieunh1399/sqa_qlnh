@@ -16,14 +16,6 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			<span	>Danh sách khách hàng gửi TK quá hạn</span>
 		</div>
 	<div class="main-content">
-		<form action="searchKHV" method=GET style="margin-top:25px">
-			<div class="input-group mb-3" >
-				<input type="text" class="form-control" name="key" placeholder="Nhap so hop dong">
-			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" type="Submit">Search</button>
-			</div>
-			</div>
-		</form>
 	
 	<form action="excel-report-saving" method="post">
 	<table border=1 style="width: 100%; border-collapse: collapse;margin-top:25px">

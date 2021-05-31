@@ -101,7 +101,7 @@ public class QLNH_Servlet extends HttpServlet {
 			case "/customer-loan-report":
 				showListReport(request, response);
 				break;
-			case "/excel-report":
+			case "/excel-report-loan":
 				Report(request, response);
 				break;
 			case "/customer-saving-report":
@@ -159,8 +159,7 @@ public class QLNH_Servlet extends HttpServlet {
 			if (accountDAO.checkLogin(account) == true) {
 				HttpSession session = request.getSession(false);
 				session.setAttribute("acc", account);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/Home.jsp");
-				dispatcher.forward(request, response);
+				response.sendRedirect("home");
 			} else if (username.length() == 0) {
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login-form.jsp");
 				String mistake = "*Bạn phải nhập tên tài khoản ";
@@ -218,8 +217,8 @@ public class QLNH_Servlet extends HttpServlet {
 	}
 
 	private void home(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Home.jsp");
-		dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Home.jsp");
+			dispatcher.forward(request, response);
 
 	}
 
@@ -267,7 +266,7 @@ public class QLNH_Servlet extends HttpServlet {
 	private void showListReportG(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 		List<Customer_Saving> listCus = customer_SavingDAO.lstCusGReport();
-		request.setAttribute("listCusGR", listCus);
+		request.setAttribute("listCusGR ", listCus);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/BaoCaoGuiTK.jsp");
 		dispatcher.forward(request, response);
 	}

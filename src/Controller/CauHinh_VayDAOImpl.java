@@ -13,6 +13,7 @@ public class CauHinh_VayDAOImpl implements CauHinh_VayDAO {
 	static String GET_CHV_BY_ID = "SELECT * FROM cauhinh_vay where Id =?";
 	static String LIST_CHV = "SELECT * from cauhinh_vay";
 	static String UPDATE_CHV = "Update cauhinh_vay set SoTienVayToiDa=?, ThoiHanVayToiDa=?, LaiSuat=? where Id=? ";
+	private String SELECT_CUS_LIKE_HT = "Select * from cauhinh_vay where HinhThucVay Like ?";
 
 	public List<CauHinh_Vay> lstCHV() {
 		List<CauHinh_Vay> lstCHV = new ArrayList<>();
@@ -67,7 +68,6 @@ public class CauHinh_VayDAOImpl implements CauHinh_VayDAO {
 	}
 
 	public void updateCHV(CauHinh_Vay cauHinhVay) throws SQLException {
-			
 		Connection con = Connect_DB.connection();
 		PreparedStatement pre;
 		try {
@@ -83,7 +83,32 @@ public class CauHinh_VayDAOImpl implements CauHinh_VayDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
 	
+	public List<CauHinh_Vay> searchCHV(String key){
+		List<CauHinh_Vay> lstCHV = new ArrayList<>();
+		Connection con = Connect_DB.connection();
+		try {
+			PreparedStatement pre = con.prepareStatement(SELECT_CUS_LIKE_HT);
+			System.out.println(pre);
+			pre.setString(1,"%"+key+"%");
+			ResultSet rs = pre.executeQuery();
+            while(rs.next())
+            {
+            	int Id = rs.getInt("Id");
+				String hinhThuc = rs.getString("HinhThucVay");
+				float soTien = rs.getFloat("SoTienVayToiDa");
+				int thoiHan = rs.getInt("ThoiHanVayToiDa");
+				float laiSuat = rs.getFloat("LaiSuat");
+				CauHinh_Vay chv = new CauHinh_Vay(Id, hinhThuc, soTien, thoiHan, laiSuat);
+				lstCHV.add(chv);
+				
+            }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return lstCHV;
 	}
 
 }

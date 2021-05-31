@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,8 +48,11 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			name="HinhThucVay" disabled/>
 	</fieldset>
 	<fieldset>
-		<label>Số tiền vay nợ:</label> <input type="float" class="form-control" style="width:500px; height:30px"
-			value="<c:out value='${cus.soTienVayNo }'/>" name="SoTienVayNo" disabled/>
+		<label>Số tiền vay nợ:</label>
+		<a type="text" class="form-control" style="width:500px; height:30px">
+		<fmt:formatNumber type = "number"
+         maxFractionDigits = "3" value = '${cus.soTienVayNo }'/> 
+         </a>
 	</fieldset>
 	<fieldset>
 		<label>Kỳ hạn:</label> <input type="text" class="form-control" style="width:500px; height:30px"
