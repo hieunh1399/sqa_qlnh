@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import Model.Account;
 
+
 public class AccountDAOImpl implements AccountDAO {
 	private final static String CHECK_LOGIN_SQL="SELECT * FROM Account WHERE username=? AND password=?";
 	@Override

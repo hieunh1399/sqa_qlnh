@@ -20,7 +20,7 @@
 		</c:if>
 		<form action="/SQA_QLNH/checklogin" method="post">
 		<span>Tên đăng nhập :</span>
-		<input type="text" name="username" class="form-control" 
+		<input id="nhapten" type="text" name="username" class="form-control" 
 		style="width:50%;margin-left:10%">
 		<br>
 		<c:if test="${mistakeP != null }">
@@ -29,11 +29,11 @@
 		</div>
 		</c:if>
 		<span>Mật khẩu :</span>
-		<input type="password" name="password" class="form-control" 
+		<input id="nhapmatkhau" type="password" name="password" class="form-control" 
 		style="width:50%;margin-left:10%">
 		<br>
 		<br>
-		<button type="submit" class="btn btn-success" style="margin-left:30%">Đăng nhập</button>
+		<button id="submit" type="submit" class="btn btn-success" style="margin-left:30%">Đăng nhập</button>
 		</form>
 	</div>
 </body>

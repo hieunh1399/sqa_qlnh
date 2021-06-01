@@ -35,7 +35,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					<td><c:out value="${c.soTienToiDa }"></c:out></td>
 					<td><c:out value="${c.thoiHan }"></c:out></td>
 					<td><c:out value="${c.laiSuat }"></c:out></td>
-					<td> <a href="<%=request.getContextPath()%>/chitietCH?id=<c:out value='${c.id}'/>">Xem chi tiết</a>&nbsp;&nbsp;				
+					<td> <a id = "detailCHV" href="<%=request.getContextPath()%>/chitietCH?id=<c:out value='${c.id}'/>">Xem chi tiết</a>&nbsp;&nbsp;				
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -17,7 +17,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 		</div>
 	<div class="main-content">
 		
-	<form action="excel-report" method="post">
+	<form action="excel-report-loan" method="post">
 	<table border=1 style="width: 100%; border-collapse: collapse;margin-top:25px">
 		<thead>
 			<tr>
@@ -39,14 +39,14 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					<td><c:out value="${cus.soHD }"></c:out></td>
 					<td><c:out value="${cus.cauhinhvay.hinhThucVay }"></c:out></td>
 					<td style="color:red">Quá hạn</td>
-					<td> <a href="<%=request.getContextPath()%>/chitietKHV?id=<c:out value='${cus.id}'/>">Xem chi tiết</a>&nbsp;&nbsp;		
+					<td> <a id = "detailBCV" href="<%=request.getContextPath()%>/chitietKHV?id=<c:out value='${cus.id}'/>">Xem chi tiết</a>&nbsp;&nbsp;		
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<br><br>
 	<div class="input-group-append">
-				<button class="btn btn-outline-secondary" type="submit">Xuất báo cáo</button>
+				<button id = "xuatBCV" class="btn btn-outline-secondary" type="submit">Xuất báo cáo</button>
 			</div>
 		</form>
 	</div>

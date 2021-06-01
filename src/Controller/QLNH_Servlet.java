@@ -201,7 +201,7 @@ public class QLNH_Servlet extends HttpServlet {
 			throws ServletException, IOException, SQLException {
 		String key = request.getParameter("key");
 		List<Customer_Saving> listCus = customer_SavingDAO.lstCusByKey(key);
-		request.setAttribute("listCus", listCus);
+		request.setAttribute("listCusG", listCus);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/DanhSachKhachHangGui.jsp");
 		dispatcher.forward(request, response);
 

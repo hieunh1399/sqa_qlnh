@@ -16,11 +16,11 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			<span	>Danh sách khách hàng gửi TK</span>
 		</div>
 	<div class="main-content">
-		<form action="searchKHV" method=GET style="margin-top:25px">
+		<form action="searchKHG" method=GET style="margin-top:25px">
 			<div class="input-group mb-3" >
-				<input type="text" class="form-control" name="key" placeholder="Nhap so hop dong">
+				<input id = "searchinput" type="text" class="form-control" name="key" placeholder="Nhap so hop dong">
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" type="Submit">Search</button>
+				<button id = "searchbutton" class="btn btn-outline-secondary" type="Submit">Search</button>
 			</div>
 			</div>
 		</form>
@@ -44,7 +44,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					<td><c:out value="${cusg.soCMT }"></c:out></td>
 					<td><c:out value="${cusg.soHD }"></c:out></td>
 					<td><c:out value="${cusg.cauhinhgui.hinhThucGui }"></c:out></td>
-					<td> <a href="<%=request.getContextPath()%>/chitietKHG?id=<c:out value='${cusg.id}'/>">Xem chi tiết</a>&nbsp;&nbsp;
+					<td> <a id = "detailKHG" href="<%=request.getContextPath()%>/chitietKHG?id=<c:out value='${cusg.id}'/>">Xem chi tiết</a>&nbsp;&nbsp;
 					
 				</tr>
 			</c:forEach>

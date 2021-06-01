@@ -47,7 +47,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	</table>
 	<br><br>
 	<div class="input-group-append">
-				<button class="btn btn-outline-secondary" type="submit">Xuất báo cáo</button>
+				<button id = "xuatBCG" class="btn btn-outline-secondary" type="submit">Xuất báo cáo</button>
 	</div>
 	</form>
 	</div>
