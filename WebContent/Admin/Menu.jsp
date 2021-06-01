@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="container">
 		<div class="header" style="width:100%; height:100px;background-color:#EF3A23;text-align:center;padding-top:15px;font-size:40px">
-		<a href="<%=request.getContextPath()%>/logout" style="margin-left:1000px; font-size:15px">Logout</a>
+		<a id ="logoutsubmit" href="<%=request.getContextPath()%>/logout" style="margin-left:1000px; font-size:15px">Logout</a>
 			<span style="color:#FFFFFF">Trang chủ quản lý ngân hàng</span>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width:100%">
