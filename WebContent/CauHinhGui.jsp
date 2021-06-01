@@ -13,7 +13,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	<jsp:include page="Admin/Menu.jsp"></jsp:include>
 	<div class="container">
 		<div class="header" style="width:100%; height:100px;text-align:center;padding-top:25px;font-size:30px">
-			<span>Quản lý cấu hình vay nợ</span>
+			<span>Quản lý cấu hình gửi tài khoản</span>
 		</div>
 	
 	<table border=1 style="width: 100%; border-collapse: collapse;margin-top:25px">
